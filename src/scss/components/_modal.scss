@@ -1,0 +1,95 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index-modal;
+  display: none;
+  @include flex-center;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-base;
+
+  &--active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-dark, 0.95);
+    cursor: pointer;
+  }
+
+  &__content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: $color-dark;
+    z-index: $z-index-content;
+    animation: modalSlideIn 0.3s ease-out;
+
+    @include mobile {
+      width: 95%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: $color-white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: $transition-base;
+    line-height: 1;
+
+    &:hover {
+      color: $color-primary;
+      transform: rotate(90deg);
+    }
+
+    @include mobile {
+      top: -35px;
+      width: 35px;
+      height: 35px;
+      font-size: 28px;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

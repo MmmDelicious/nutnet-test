@@ -1,0 +1,73 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.about {
+  @include section-padding;
+  background: $color-white;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 101px;
+    max-width: 1270px;
+    margin: 0 auto;
+
+    @include desktop {
+      flex-direction: column;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__image {
+    flex-shrink: 0;
+    max-width: 233px;
+
+    @include desktop {
+      max-width: 180px;
+    }
+
+    @include mobile {
+      max-width: 120px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    max-width: 540px;
+
+    @include desktop {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 1.33;
+    text-transform: uppercase;
+    color: $color-text-dark;
+    margin-bottom: 11px;
+  }
+
+  &__description {
+    @include flex-column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+
+    p {
+      font-size: $font-size-base;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      color: $color-text-dark;
+    }
+  }
+}

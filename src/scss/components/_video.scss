@@ -1,0 +1,75 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.video {
+  min-height: 550px;
+  background: $gradient-bg;
+  position: relative;
+  @include flex-center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/backgrounds/video-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: $z-index-background;
+  }
+
+  .container {
+    position: relative;
+    z-index: $z-index-content;
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    gap: 37px;
+    padding: 197px 0;
+  }
+
+  &__play-btn {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-medium;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-white;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+  }
+
+  @include tablet {
+    min-height: 400px;
+
+    &__play-btn {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__title {
+      font-size: $font-size-base;
+    }
+  }
+}

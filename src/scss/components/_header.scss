@@ -1,0 +1,139 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-header;
+  background: transparent;
+  padding: 15px 0;
+  transition: $transition-base;
+
+  &.header--scrolled {
+    background: rgba($color-dark, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 279px;
+
+    @include tablet {
+      justify-content: space-between;
+      gap: $spacing-md;
+    }
+  }
+
+  &__logo {
+    @include flex-center;
+    gap: 11px;
+  }
+
+  &__logo-img {
+    width: 44px;
+    height: auto;
+  }
+
+  &__logo-text {
+    font-family: $font-primary;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 1.17;
+    @include text-gradient;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    @include tablet {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: rgba($color-dark, 0.98);
+      padding: $spacing-lg;
+      gap: $spacing-md;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-base;
+
+      &.header__menu--active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__menu-link {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: $color-white;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $gradient-primary;
+      transition: $transition-base;
+    }
+
+    &:hover::after,
+    &--active::after {
+      width: 100%;
+    }
+
+    &--active {
+      color: $color-primary;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 22px;
+    z-index: $z-index-mobile-menu;
+
+    @include tablet {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: $color-white;
+      transition: $transition-base;
+    }
+
+    &.header__burger--active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+}

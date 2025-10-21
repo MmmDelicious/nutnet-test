@@ -1,0 +1,43 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 7px 13px;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  border: 2px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: $transition-base;
+  text-align: center;
+
+  &--primary {
+    border-color: $color-primary;
+    color: $color-primary;
+    background: transparent;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  @include mobile {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

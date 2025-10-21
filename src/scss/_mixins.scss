@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-gradient {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin section-padding {
+  padding: $spacing-xxl 0;
+
+  @include tablet {
+    padding: $spacing-xl 0;
+  }
+
+  @include mobile {
+    padding: $spacing-lg 0;
+  }
+}
+
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 calc((100% - 940px) / 2);
+
+  @include desktop {
+    padding: 0 80px;
+  }
+
+  @include tablet {
+    padding: 0 40px;
+  }
+
+  @include mobile {
+    padding: 0 $container-padding-mobile;
+  }
+}

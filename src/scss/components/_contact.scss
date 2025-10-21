@@ -1,0 +1,89 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.contact {
+  @include section-padding;
+  background: $color-white;
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: $font-size-large;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-text-dark;
+    letter-spacing: 0.05em;
+    line-height: 1.33;
+    text-align: center;
+    margin-bottom: 31px;
+  }
+
+  &__form {
+    max-width: 460px;
+    margin: 0 auto;
+    @include flex-column;
+    gap: $spacing-md;
+  }
+
+  &__form-group {
+    position: relative;
+    width: 100%;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 19px;
+    font-size: $font-size-base;
+    font-weight: 300;
+    color: $color-text-dark;
+    background: $color-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: $transition-base;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+
+    &::placeholder {
+      color: $color-text-dark;
+      opacity: 0.7;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.1);
+    }
+
+    &--error {
+      border-color: #e74c3c;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__error {
+    display: none;
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 5px;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__submit {
+    width: 118px;
+    margin: -8px auto 0;
+  }
+
+  @include tablet {
+    &__form {
+      max-width: 100%;
+    }
+  }
+}

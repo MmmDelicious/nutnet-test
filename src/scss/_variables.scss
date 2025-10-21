@@ -1,0 +1,45 @@
+$color-primary: #00e0d0;
+$color-secondary: #52a9cf;
+$color-dark: #09052f;
+$color-purple: #311d5e;
+$color-text-dark: #413d4b;
+$color-text-gray: #333333;
+$color-text-light: #2f2d35;
+$color-white: #ffffff;
+$color-bg-light: #fafafa;
+
+$gradient-primary: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+$gradient-bg: linear-gradient(180deg, $color-purple 0%, $color-dark 100%);
+
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+
+$font-size-base: 14px;
+$font-size-small: 13px;
+$font-size-medium: 16px;
+$font-size-large: 22px;
+$font-size-xl: 32px;
+
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+
+$container-max-width: 1600px;
+$container-padding-mobile: 20px;
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+$transition-base: all 0.3s ease;
+
+// Z-index layers
+$z-index-background: 0;
+$z-index-content: 1;
+$z-index-header: 1000;
+$z-index-mobile-menu: 1001;
+$z-index-modal: 9999;
+$z-index-toast: 10000;

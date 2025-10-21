@@ -1,0 +1,87 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.expertise {
+  @include section-padding;
+  background: $color-white;
+
+  &__header {
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    margin-bottom: 81px;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 1.33;
+    text-transform: uppercase;
+    color: $color-text-dark;
+    letter-spacing: 0.05em;
+  }
+
+  &__subtitle {
+    font-family: $font-secondary;
+    font-size: $font-size-base;
+    line-height: 1.33;
+    color: $color-text-light;
+    letter-spacing: 0.07em;
+  }
+
+  &__line {
+    width: 48px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44px 44px;
+    max-width: 919px;
+    margin: 0 auto;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg;
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+}
+
+.expertise-card {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-text-dark;
+    letter-spacing: 0.05em;
+    line-height: 1.171875;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    color: $color-text-gray;
+  }
+}

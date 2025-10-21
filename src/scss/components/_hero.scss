@@ -1,0 +1,101 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+  min-height: 670px;
+  background: $gradient-bg;
+  position: relative;
+  @include flex-center;
+  padding-top: 80px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/backgrounds/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: $z-index-background;
+  }
+
+  .container {
+    position: relative;
+    z-index: $z-index-content;
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    gap: 52px;
+    padding: 141px 0 221px;
+  }
+
+  &__title-wrapper {
+    @include flex-column;
+    align-items: center;
+    gap: 16px;
+    max-width: 508px;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 900;
+    color: $color-white;
+    letter-spacing: 0.01em;
+    line-height: 1.33;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  &__line {
+    width: 47px;
+  }
+
+  &__text-wrapper {
+    @include flex-column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: $font-size-base;
+    font-weight: 300;
+    color: $color-white;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+  }
+
+  @include tablet {
+    min-height: 500px;
+
+    &__content {
+      padding: $spacing-lg 0;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+  }
+
+  @include mobile {
+    min-height: 400px;
+
+    &__title {
+      font-size: 24px;
+      white-space: normal;
+    }
+  }
+}
