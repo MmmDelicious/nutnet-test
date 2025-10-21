@@ -4,31 +4,31 @@ export function initTestimonials() {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.',
       name: 'John Doe',
       position: 'CTO COMPANY',
-      avatar: '/src/assets/images/avatars/avatar-1.png',
+      avatar: '/avatars/avatar-1.png',
     },
     {
       text: 'Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.',
       name: 'Sarah Smith',
       position: 'DESIGNER',
-      avatar: '/src/assets/images/avatars/avatar-2.png',
+      avatar: '/avatars/avatar-2.png',
     },
     {
       text: "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
       name: 'Jane galadriel',
       position: 'CEO TENGKUREP',
-      avatar: '/src/assets/images/avatars/avatar-3.png',
+      avatar: '/avatars/avatar-3.png',
     },
     {
       text: "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version of Lorem Ipsum. Duis sed odio sit amet nibh vulputate cursus.",
       name: 'Mike Johnson',
       position: 'DEVELOPER',
-      avatar: '/src/assets/images/avatars/avatar-4.png',
+      avatar: '/avatars/avatar-4.png',
     },
     {
       text: "Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. This is Photoshop's version of Lorem Ipsum.",
       name: 'Emily Brown',
       position: 'MARKETING MANAGER',
-      avatar: '/src/assets/images/avatars/avatar-5.png',
+      avatar: '/avatars/avatar-5.png',
     },
   ];
 
