@@ -1,5 +1,6 @@
 Тестовое задание на позицию Frontend Developer. 
 
+**Demo:** [nutnet-test-two.vercel.app](https://nutnet-test-two.vercel.app)  
 **Макет:** [Figma](https://www.figma.com/design/csMMpIunLLD6mv8ZWhnzqg/frontend-test-mid)
 
 ---
