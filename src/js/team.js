@@ -1,14 +1,9 @@
-import avatar1 from '../assets/images/avatars/avatar-1.png';
-import avatar2 from '../assets/images/avatars/avatar-2.png';
-import avatar3 from '../assets/images/avatars/avatar-3.png';
-import avatar4 from '../assets/images/avatars/avatar-4.png';
-
 export function initTeam() {
   const teamData = [
-    { name: 'Semf ucuk', position: 'CEO & FOUNDER', avatar: avatar1 },
-    { name: 'DIK ADALIN', position: 'ENGINEERING', avatar: avatar2 },
-    { name: 'JENG KOL', position: 'DESIGNER', avatar: avatar3 },
-    { name: 'PET ROMAK', position: 'MARKETING', avatar: avatar4 },
+    { name: 'Semf ucuk', position: 'CEO & FOUNDER', avatar: '/avatars/avatar-1.png' },
+    { name: 'DIK ADALIN', position: 'ENGINEERING', avatar: '/avatars/avatar-2.png' },
+    { name: 'JENG KOL', position: 'DESIGNER', avatar: '/avatars/avatar-3.png' },
+    { name: 'PET ROMAK', position: 'MARKETING', avatar: '/avatars/avatar-4.png' },
   ];
 
   const teamGrid = document.getElementById('team-grid');
